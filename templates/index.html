@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="http://192.168.0.106:5000/static/image/logo.png">
+	<title>Upload File</title>
+</head>
+<body>
+	<form action="upload" method="post"  enctype="multipart/form-data">
+		<h3>upload a file</h3>
+		<input type="file" name="file" id="file">
+
+		<button type="submit">submit</button>
+	</form>
+
+	<h3>Uploaded Files</h3>
+	<ol id="uploaded_files">
+		{% for file in files %}
+		<li><a href="http://192.168.0.106:5000/files/{{file}}" target="_blank">{{file}}</a></li>
+		{% endfor %}
+	</ol>
+</body>
+</html>
